@@ -69,14 +69,6 @@ guid, title, proizvoditel, model, moshnost, haracteristiki, cost, delProducts, h
         <Button size="small" color="primary" onClick={() => handleClickOpenM(guid)} className={classes.info}>
           information
         </Button>
-        <div>
-          <Fab aria-label="Edit" className={classes.fab} onClick={() => handleClickOpenE(guid)}>
-            <EditIcon />
-          </Fab>
-          <Fab aria-label="Delete" className={classes.fab} onClick={() => delProducts(guid)}>
-            <DeleteIcon />
-          </Fab>
-        </div>
       </CardActions>
     </Card>
   );

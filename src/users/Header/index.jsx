@@ -4,8 +4,9 @@ import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 
 import CreateCard from '../CreateCard';
-import { addNews} from '../../store/action';
+import { addProducts } from '../../store/action/products';
 import './header.css';
+
 
 class Header extends React.Component {
     state = {
@@ -16,32 +17,34 @@ class Header extends React.Component {
 
     handleOnClose = () => this.setState({ isOpen: false });
 
-    handleSubmitAddNews = (values) => {
-      const { addNews } = this.props;
+    handleSubmitAddProducts = (values) => {
+      const { addProducts } = this.props;
 
-      addNews(values);
+      addProducts(values);
       this.setState({ isOpen: false });
     };
 
     render() {
       const { isOpen } = this.state;
       return (
-        <header className="header-back">
-          <h1 className="titleNews">NEWS</h1>
+
+
+        <div>
+
           <Button
             type="button"
             className="button-add"
             onClick={this.handleClickOpen}
           >
-                Add news
+                Добавление товаров
           </Button>
           <Dialog open={isOpen} onClose={this.handleOnClose}>
             <CreateCard
-              onSubmit={this.handleSubmitAddNews}
+              onSubmit={this.handleSubmitAddProducts}
               handleClose={this.handleOnClose}
             />
           </Dialog>
-        </header>
+        </div>
       );
     }
 }
@@ -53,7 +56,7 @@ function mapStateToProps(state) {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  addNews: news => dispatch(addNews(news)),
+  addProducts: (products) => dispatch(addProducts(products)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);

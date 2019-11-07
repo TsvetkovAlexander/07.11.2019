@@ -5,6 +5,7 @@ import Button from '@material-ui/core/Button';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import './style.css';
+import Typography from "@material-ui/core/Typography";
 
 const CreateCard = ({ onSubmit, handleClose, initialValues }) => {
     console.log('initialValues', initialValues);
@@ -16,24 +17,32 @@ const CreateCard = ({ onSubmit, handleClose, initialValues }) => {
 
                 <DialogContent className="input-group-modal">
                     <div>
-                        <label>title:</label>
-                        <Field required name="title" component="input" type="text" className="title" />
+                        <label>Имя:</label>
+                        <Field required name="name" component="input" type="text" className="title" />
                     </div>
                     <div>
-                        <label>производитель:</label>
-                        <Field required name="proizvoditel" component="input" type="text" className="proizvoditel" />
+                        <label>  Фамилия:</label>
+                        <Field required name="surname" component="input" type="text" className="proizvoditel" />
                     </div>
                     <div>
-                        <label>модель:</label>
-                        <Field required name="model" component="input" type="textarea" className="model" />
+                        <label>Отчество:</label>
+                        <Field required name="patronymic" component="input" type="textarea" className="model" />
                     </div>
                     <div>
-                        <label>мощность:</label>
-                        <Field required name="moshnost" component="input" type="textarea" className="text" />
+                        <label>Адресс:</label>
+                        <Field required name="adress" component="input" type="textarea" className="text" />
                     </div>
                     <div>
-                        <label>цена:</label>
-                        <Field required name="cost" component="input" type="textarea" className="text" />
+                        <label>почта:</label>
+                        <Field required name="email" component="input" type="textarea" className="text" />
+                    </div>
+                    <div>
+                        <label>номер:</label>
+                        <Field required name="phone" component="input" type="textarea" className="text" />
+                    </div>
+                    <div>
+                        <label>заказы:</label>
+                        <Field required name="orders" component="input" type="textarea" className="text" />
                     </div>
                 </DialogContent>
                 <DialogActions className="AddClose">

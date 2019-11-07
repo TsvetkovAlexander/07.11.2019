@@ -1,1 +1,2 @@
-export  {data as news} from './newsdata';
+export  {data as products} from './productsdata';
+export  {data as users}from './usersdata';
